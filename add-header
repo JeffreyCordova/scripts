@@ -1,0 +1,11 @@
+#!/bin/sh
+
+text=$1
+file=$2
+
+[ -z "$text" ] && exit 1
+[ -z "$file" ] && exit 1
+
+figlet -f slant $text | cat - $file > temp && mv temp $file
+sed -i '1,6s/^/# /' $file
+sed -i '6G;' $file
