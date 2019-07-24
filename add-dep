@@ -1,0 +1,14 @@
+#!/bin/sh
+#              __    __          __         
+#   ____ _____/ /___/ /     ____/ /__  ____ 
+#  / __ `/ __  / __  /_____/ __  / _ \/ __ \
+# / /_/ / /_/ / /_/ /_____/ /_/ /  __/ /_/ /
+# \__,_/\__,_/\__,_/      \__,_/\___/ .___/ 
+#                                  /_/      
+
+text=$1
+
+[ -z "$text" ] && exit 1
+
+echo $text >> ~/dotfiles/install/deps
+sort ~/dotfiles/install/deps -o ~/dotfiles/install/deps
